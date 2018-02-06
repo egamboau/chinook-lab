@@ -1,0 +1,714 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1400,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/egamboau database windows net;Chinook_DW",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "egamboau.database.windows.net",
+            "database": "Chinook_DW"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {},
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "Username": "egamboau",
+          "EncryptConnection": true
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "DT_Album",
+        "columns": [
+          {
+            "name": "DT_AlbumID",
+            "dataType": "int64",
+            "sourceColumn": "DT_AlbumID"
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title"
+          },
+          {
+            "name": "ref_AlbumID",
+            "dataType": "int64",
+            "sourceColumn": "ref_AlbumID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_DT_Album = Source{[Schema=\"dbo\",Item=\"DT_Album\"]}[Data]",
+                "in",
+                "    dbo_DT_Album"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DT_Artist",
+        "columns": [
+          {
+            "name": "DT_ArtistID",
+            "dataType": "int64",
+            "sourceColumn": "DT_ArtistID"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name"
+          },
+          {
+            "name": "ref_ArtistId",
+            "dataType": "int64",
+            "sourceColumn": "ref_ArtistId"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_DT_Artist = Source{[Schema=\"dbo\",Item=\"DT_Artist\"]}[Data]",
+                "in",
+                "    dbo_DT_Artist"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DT_BillingAddress",
+        "columns": [
+          {
+            "name": "DT_BillingAddressID",
+            "dataType": "int64",
+            "sourceColumn": "DT_BillingAddressID"
+          },
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode"
+          },
+          {
+            "name": "ref_BillingAddressID",
+            "dataType": "int64",
+            "sourceColumn": "ref_BillingAddressID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_DT_BillingAddress = Source{[Schema=\"dbo\",Item=\"DT_BillingAddress\"]}[Data]",
+                "in",
+                "    dbo_DT_BillingAddress"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DT_Customer",
+        "columns": [
+          {
+            "name": "DT_CustomerID",
+            "dataType": "int64",
+            "sourceColumn": "DT_CustomerID"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName"
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email"
+          },
+          {
+            "name": "ref_CustomerID",
+            "dataType": "int64",
+            "sourceColumn": "ref_CustomerID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_DT_Customer = Source{[Schema=\"dbo\",Item=\"DT_Customer\"]}[Data]",
+                "in",
+                "    dbo_DT_Customer"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DT_CustomerAddress",
+        "columns": [
+          {
+            "name": "DT_CustomerAddressID",
+            "dataType": "int64",
+            "sourceColumn": "DT_CustomerAddressID"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone"
+          },
+          {
+            "name": "Fax",
+            "dataType": "string",
+            "sourceColumn": "Fax"
+          },
+          {
+            "name": "ref_CustomerAddressID",
+            "dataType": "int64",
+            "sourceColumn": "ref_CustomerAddressID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_DT_CustomerAddress = Source{[Schema=\"dbo\",Item=\"DT_CustomerAddress\"]}[Data]",
+                "in",
+                "    dbo_DT_CustomerAddress"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DT_Date",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "DT_DateID",
+            "dataType": "int64",
+            "sourceColumn": "DT_DateID"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "Date"
+          },
+          {
+            "name": "FullDateUK",
+            "dataType": "string",
+            "sourceColumn": "FullDateUK"
+          },
+          {
+            "name": "FullDateUSA",
+            "dataType": "string",
+            "sourceColumn": "FullDateUSA"
+          },
+          {
+            "name": "DayOfMonth",
+            "dataType": "string",
+            "sourceColumn": "DayOfMonth"
+          },
+          {
+            "name": "DaySuffix",
+            "dataType": "string",
+            "sourceColumn": "DaySuffix"
+          },
+          {
+            "name": "DayName",
+            "dataType": "string",
+            "sourceColumn": "DayName"
+          },
+          {
+            "name": "DayOfWeekUSA",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekUSA"
+          },
+          {
+            "name": "DayOfWeekUK",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekUK"
+          },
+          {
+            "name": "DayOfWeekInMonth",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekInMonth"
+          },
+          {
+            "name": "DayOfWeekInYear",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekInYear"
+          },
+          {
+            "name": "DayOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "DayOfQuarter"
+          },
+          {
+            "name": "DayOfYear",
+            "dataType": "string",
+            "sourceColumn": "DayOfYear"
+          },
+          {
+            "name": "WeekOfMonth",
+            "dataType": "string",
+            "sourceColumn": "WeekOfMonth"
+          },
+          {
+            "name": "WeekOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "WeekOfQuarter"
+          },
+          {
+            "name": "WeekOfYear",
+            "dataType": "string",
+            "sourceColumn": "WeekOfYear"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName"
+          },
+          {
+            "name": "MonthOfQuarter",
+            "dataType": "string",
+            "sourceColumn": "MonthOfQuarter"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "string",
+            "sourceColumn": "Quarter"
+          },
+          {
+            "name": "QuarterName",
+            "dataType": "string",
+            "sourceColumn": "QuarterName"
+          },
+          {
+            "name": "Year",
+            "dataType": "string",
+            "sourceColumn": "Year"
+          },
+          {
+            "name": "YearName",
+            "dataType": "string",
+            "sourceColumn": "YearName"
+          },
+          {
+            "name": "MonthYear",
+            "dataType": "string",
+            "sourceColumn": "MonthYear"
+          },
+          {
+            "name": "MMYYYY",
+            "dataType": "string",
+            "sourceColumn": "MMYYYY"
+          },
+          {
+            "name": "FirstDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfMonth"
+          },
+          {
+            "name": "LastDayOfMonth",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfMonth"
+          },
+          {
+            "name": "FirstDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfQuarter"
+          },
+          {
+            "name": "LastDayOfQuarter",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfQuarter"
+          },
+          {
+            "name": "FirstDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "FirstDayOfYear"
+          },
+          {
+            "name": "LastDayOfYear",
+            "dataType": "dateTime",
+            "sourceColumn": "LastDayOfYear"
+          },
+          {
+            "name": "IsWeekday",
+            "dataType": "boolean",
+            "sourceColumn": "IsWeekday"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_DT_Date = Source{[Schema=\"dbo\",Item=\"DT_Date\"]}[Data]",
+                "in",
+                "    dbo_DT_Date"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DT_Genre",
+        "columns": [
+          {
+            "name": "DT_GenreID",
+            "dataType": "int64",
+            "sourceColumn": "DT_GenreID"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name"
+          },
+          {
+            "name": "ref_GenreID",
+            "dataType": "int64",
+            "sourceColumn": "ref_GenreID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_DT_Genre = Source{[Schema=\"dbo\",Item=\"DT_Genre\"]}[Data]",
+                "in",
+                "    dbo_DT_Genre"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DT_MediaType",
+        "columns": [
+          {
+            "name": "DT_MediaTypeID",
+            "dataType": "int64",
+            "sourceColumn": "DT_MediaTypeID"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name"
+          },
+          {
+            "name": "ref_MediaTypeID",
+            "dataType": "int64",
+            "sourceColumn": "ref_MediaTypeID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_DT_MediaType = Source{[Schema=\"dbo\",Item=\"DT_MediaType\"]}[Data]",
+                "in",
+                "    dbo_DT_MediaType"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DT_Track",
+        "columns": [
+          {
+            "name": "DT_TrackID",
+            "dataType": "int64",
+            "sourceColumn": "DT_TrackID"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name"
+          },
+          {
+            "name": "Miliseconds",
+            "dataType": "int64",
+            "sourceColumn": "Miliseconds"
+          },
+          {
+            "name": "Bytes",
+            "dataType": "int64",
+            "sourceColumn": "Bytes"
+          },
+          {
+            "name": "ref_TrackID",
+            "dataType": "int64",
+            "sourceColumn": "ref_TrackID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_DT_Track = Source{[Schema=\"dbo\",Item=\"DT_Track\"]}[Data]",
+                "in",
+                "    dbo_DT_Track"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FT_Sales",
+        "columns": [
+          {
+            "name": "DT_GenreId",
+            "dataType": "int64",
+            "sourceColumn": "DT_GenreId"
+          },
+          {
+            "name": "DT_MediaTypeID",
+            "dataType": "int64",
+            "sourceColumn": "DT_MediaTypeID"
+          },
+          {
+            "name": "DT_BillingAddressID",
+            "dataType": "int64",
+            "sourceColumn": "DT_BillingAddressID"
+          },
+          {
+            "name": "DT_AlbumID",
+            "dataType": "int64",
+            "sourceColumn": "DT_AlbumID"
+          },
+          {
+            "name": "DT_CustomerID",
+            "dataType": "int64",
+            "sourceColumn": "DT_CustomerID"
+          },
+          {
+            "name": "DT_TrackID",
+            "dataType": "int64",
+            "sourceColumn": "DT_TrackID"
+          },
+          {
+            "name": "DT_CustomerAddressID",
+            "dataType": "int64",
+            "sourceColumn": "DT_CustomerAddressID"
+          },
+          {
+            "name": "DT_ArtistID",
+            "dataType": "int64",
+            "sourceColumn": "DT_ArtistID"
+          },
+          {
+            "name": "quantity",
+            "dataType": "int64",
+            "sourceColumn": "quantity"
+          },
+          {
+            "name": "price",
+            "dataType": "int64",
+            "sourceColumn": "price"
+          },
+          {
+            "name": "DT_DateID",
+            "dataType": "int64",
+            "sourceColumn": "DT_DateID"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/egamboau database windows net;Chinook_DW\",",
+                "    dbo_FT_Sales = Source{[Schema=\"dbo\",Item=\"FT_Sales\"]}[Data]",
+                "in",
+                "    dbo_FT_Sales"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "ee0c30f5-b6a7-4b4c-81a7-1a6f3bed7d59",
+        "fromTable": "FT_Sales",
+        "fromColumn": "DT_AlbumID",
+        "toTable": "DT_Album",
+        "toColumn": "DT_AlbumID"
+      },
+      {
+        "name": "b49b51e3-c146-48e0-8e0d-c008fd24d2c3",
+        "fromTable": "FT_Sales",
+        "fromColumn": "DT_ArtistID",
+        "toTable": "DT_Artist",
+        "toColumn": "DT_ArtistID"
+      },
+      {
+        "name": "37f9c9c5-2634-484f-8cde-af674eb2e359",
+        "fromTable": "FT_Sales",
+        "fromColumn": "DT_BillingAddressID",
+        "toTable": "DT_BillingAddress",
+        "toColumn": "DT_BillingAddressID"
+      },
+      {
+        "name": "71852ed0-6e59-41d1-b34a-57cbd884b087",
+        "fromTable": "FT_Sales",
+        "fromColumn": "DT_CustomerID",
+        "toTable": "DT_Customer",
+        "toColumn": "DT_CustomerID"
+      },
+      {
+        "name": "97d1a6d5-d810-4472-856e-96bcfc0ae65a",
+        "fromTable": "FT_Sales",
+        "fromColumn": "DT_CustomerAddressID",
+        "toTable": "DT_CustomerAddress",
+        "toColumn": "DT_CustomerAddressID"
+      },
+      {
+        "name": "e44702ba-f399-46ef-a487-0ea26263a8f5",
+        "fromTable": "FT_Sales",
+        "fromColumn": "DT_DateID",
+        "toTable": "DT_Date",
+        "toColumn": "DT_DateID"
+      },
+      {
+        "name": "ce6248b5-4ba6-40b3-9f1e-2a233c59e0b8",
+        "fromTable": "FT_Sales",
+        "fromColumn": "DT_GenreId",
+        "toTable": "DT_Genre",
+        "toColumn": "DT_GenreID"
+      },
+      {
+        "name": "00d5edca-948f-49f5-9a1b-504d846b4fac",
+        "fromTable": "FT_Sales",
+        "fromColumn": "DT_MediaTypeID",
+        "toTable": "DT_MediaType",
+        "toColumn": "DT_MediaTypeID"
+      },
+      {
+        "name": "27decaee-c7cf-4874-a130-fc8fd761f6bd",
+        "fromTable": "FT_Sales",
+        "fromColumn": "DT_TrackID",
+        "toTable": "DT_Track",
+        "toColumn": "DT_TrackID"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "500"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

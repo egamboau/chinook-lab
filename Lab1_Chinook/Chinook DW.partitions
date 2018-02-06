@@ -1,0 +1,205 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c1d64230-a9e1-44f3-88c8-48b09f2f8c4d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Chinook DW</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>FT Sales</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="ac029ea3-fa8d-4b5c-bc36-5b06700f7b43">
+          <ID>FT Sales</ID>
+          <Name>FT Sales</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="51765888-b4aa-43cf-b25d-dcd14d1ba663">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_FT_Sales</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>DT Track</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="8d4af0ec-eaa6-4dad-bf69-d81f1b50456a">
+          <ID>DT Track</ID>
+          <Name>DT Track</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="e0591641-7cc1-4023-bf0d-6951f162dd5c">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_DT_Track</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>DT Customer</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="8fd3225b-91bb-4dad-b2c4-75eafb0fe0c0">
+          <ID>DT Customer</ID>
+          <Name>DT Customer</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="1e18778d-86c5-4a16-9fe4-85684cf1e2e1">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_DT_Customer</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>DT Album</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="de58c364-c0b0-4e1c-abf8-c46f907d1b4a">
+          <ID>DT Album</ID>
+          <Name>DT Album</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="154c76dc-6e49-4105-bbbd-18be1bd00e27">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_DT_Album</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>DT Billing Address</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="ee8dff72-dd69-4f8e-a48a-c8d7ba05b064">
+          <ID>DT Billing Address</ID>
+          <Name>DT Billing Address</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b40eea25-d0ec-4e99-b5af-4a008e40bb2e">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_DT_BillingAddress</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>DT Media Type</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="3e442af9-9b70-4226-977e-5a57d82be80a">
+          <ID>DT Media Type</ID>
+          <Name>DT Media Type</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="e87f71ee-d98e-4538-812b-eec10c7269ea">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_DT_MediaType</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>DT Date</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="83f189ee-72da-43db-97af-db9dec731d2a">
+          <ID>DT Date</ID>
+          <Name>DT Date</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="bb84d92f-6a24-4c88-9da8-03d0fa633a45">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_DT_Date</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>DT Genre</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a8125d58-7f96-4127-bb18-506f5a70cead">
+          <ID>DT Genre</ID>
+          <Name>DT Genre</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="09d01b4f-8605-453e-98dc-8fe1e3df96f6">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_DT_Genre</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>DT Customer Address</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="957497ef-dbfc-4d93-af93-62a02573cae2">
+          <ID>DT Customer Address</ID>
+          <Name>DT Customer Address</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="78f0df76-1f81-4aea-aa72-f53c14e5cf6a">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_DT_CustomerAddress</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>DT Artist</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e3f15f71-7a18-46b4-83de-fc0045854a30">
+          <ID>DT Artist</ID>
+          <Name>DT Artist</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="757dd671-1be1-40e5-b600-a36dc6e6cba7">
+            <DataSourceViewID>Chinook DW</DataSourceViewID>
+            <TableID>dbo_DT_Artist</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
